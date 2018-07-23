@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Create a Blog by Hugo</title>
+      <title>Create a Blog by Hugo (1)</title>
       <link>http://localhost:1313/post/create-a-blog-by-hugo/</link>
       <pubDate>Mon, 23 Jul 2018 16:48:19 +0800</pubDate>
       
       <guid>http://localhost:1313/post/create-a-blog-by-hugo/</guid>
-      <description>简单记录下如何建立Github Page $ brew install hugo $ hugo new site jinwik.github.io # 使用even主题 $ git clone https://github.com/olOwOlo/hugo-theme-even themes/even # 根据需求修改下配置文件 $ cp themes/even/exampleSite/config.toml . $ hugo server -t even #本地测试 $ hugo -t even #</description>
+      <description>简单记录下如何使用Hugo如何建立Github Page。 参考：https://github.com/olOwOlo/hugo-theme-e</description>
     </item>
     
   </channel>

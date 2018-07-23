@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Archive - Tim&#39;s Github Page</title>
+  <title>Create a Blog by Hugo - Tim&#39;s Github Page</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,8 @@
 
 
 <meta name="author" content="Tim" />
-  <meta name="description" content="Tim&#39;s Github Page." />
+  <meta name="description" content="简单记录下如何使用Hugo如何建立Github Page. $ brew install hugo $ hugo new site jinwik.github.io # 使用even主题 $ git clone https://github.com/olOwOlo/hugo-theme-even themes/even # 根据需求修改下配置文件 $ cp themes/even/exampleSite/config.toml . $ hugo server -t even #本" />
+
   <meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -28,9 +29,7 @@
 <meta name="generator" content="Hugo 0.45-DEV" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/" />
-<link href="http://localhost:1313/post/index.xml" rel="alternate" type="application/rss+xml" title="Tim&#39;s Github Page" />
-  <link href="http://localhost:1313/post/index.xml" rel="feed" type="application/rss+xml" title="Tim&#39;s Github Page" />
+<link rel="canonical" href="http://localhost:1313/posts/create-a-blog-by-hugo/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -50,30 +49,41 @@
 
 
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="Tim&#39;s Github Page." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/post/" />
+<meta property="og:title" content="Create a Blog by Hugo" />
+<meta property="og:description" content="简单记录下如何使用Hugo如何建立Github Page. $ brew install hugo $ hugo new site jinwik.github.io # 使用even主题 $ git clone https://github.com/olOwOlo/hugo-theme-even themes/even # 根据需求修改下配置文件 $ cp themes/even/exampleSite/config.toml . $ hugo server -t even #本" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/create-a-blog-by-hugo/" />
 
 
 
-<meta property="og:updated_time" content="2018-07-23T16:48:19&#43;08:00"/>
+<meta property="article:published_time" content="2018-07-23T16:48:19&#43;08:00"/>
 
-
-
-
-
-
+<meta property="article:modified_time" content="2018-07-23T16:48:19&#43;08:00"/>
 
 
 
 
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="Tim&#39;s Github Page.">
 
+
+
+
+
+
+
+<meta itemprop="name" content="Create a Blog by Hugo">
+<meta itemprop="description" content="简单记录下如何使用Hugo如何建立Github Page. $ brew install hugo $ hugo new site jinwik.github.io # 使用even主题 $ git clone https://github.com/olOwOlo/hugo-theme-even themes/even # 根据需求修改下配置文件 $ cp themes/even/exampleSite/config.toml . $ hugo server -t even #本">
+
+
+<meta itemprop="datePublished" content="2018-07-23T16:48:19&#43;08:00" />
+<meta itemprop="dateModified" content="2018-07-23T16:48:19&#43;08:00" />
+<meta itemprop="wordCount" content="111">
+
+
+
+<meta itemprop="keywords" content="Hugo,Github Page," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Tim&#39;s Github Page."/>
+<meta name="twitter:title" content="Create a Blog by Hugo"/>
+<meta name="twitter:description" content="简单记录下如何使用Hugo如何建立Github Page. $ brew install hugo $ hugo new site jinwik.github.io # 使用even主题 $ git clone https://github.com/olOwOlo/hugo-theme-even themes/even # 根据需求修改下配置文件 $ cp themes/even/exampleSite/config.toml . $ hugo server -t even #本"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -133,31 +143,34 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          
-<section id="archive" class="archive">
-    
-      <div class="collection-title">
-        <h2 class="archive-year">2018</h2>
-      </div>
+          <article class="post">
+  <div class="post-content">
+      <p>简单记录下如何使用Hugo如何建立Github Page.</p>
 
-    <div class="archive-post">
-      <span class="archive-post-time">
-        07-23
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/create-a-blog-by-hugo/" class="archive-post-link">
-          Create a Blog by Hugo (1)
-        </a>
-      </span>
-    </div></section>
+<pre><code>$ brew install hugo
+$ hugo new site jinwik.github.io
+# 使用even主题
+$ git clone https://github.com/olOwOlo/hugo-theme-even themes/even
+# 根据需求修改下配置文件
+$ cp themes/even/exampleSite/config.toml .
+$ hugo server -t even #本地测试
 
-<nav class="pagination">
-  
-  
-</nav>
+$ hugo -t even #生成静态文件
+$ cd public
+$ git init
+$ git add .
+$ git commit -m 'Initial commit.'
+$ git remote add origin https://github.com/jinwik/jinwik.github.io.git
+$ git push origin master
+</code></pre>
 
+  </div>
+</article>
         </div>
         
+  
+
+  
 
       </div>
     </main>
