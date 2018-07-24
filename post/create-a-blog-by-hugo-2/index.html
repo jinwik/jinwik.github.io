@@ -76,7 +76,7 @@
 
 <meta itemprop="datePublished" content="2018-07-24T08:45:17&#43;08:00" />
 <meta itemprop="dateModified" content="2018-07-24T08:45:17&#43;08:00" />
-<meta itemprop="wordCount" content="145">
+<meta itemprop="wordCount" content="144">
 
 
 
@@ -172,47 +172,49 @@
     
     <div class="post-content">
       <ol>
-<li>简易部署hugo文章到github page.</li>
-</ol>
+<li><p>简易部署hugo文章到github page.</p>
 
 <p>参考： <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a> 使用如下脚本创建deploy.sh.</p>
 
 <pre><code>#!/bin/bash
-    
+        
 echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
-    
+        
 # Build the project.
 hugo -t even # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
-    
+        
 # Go To Public folder
 cd public
 # Add changes to git.
 git add .
-    
+        
 # Commit changes.
 msg=&quot;rebuilding site `date`&quot;
 if [ $# -eq 1 ]
   then msg=&quot;$1&quot;
 fi
 git commit -m &quot;$msg&quot;
-    
+        
 # Push source and build repos.
 git push origin master
-    
+        
 # Come Back up to the Project Root
 cd ..
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>配合mweb使用.</li>
-</ol>
+<li><p>配合mweb使用.</p>
 
 <ul>
-<li><p>修改成绝对路径：
-<img src="/media/15323990770751.jpg" alt="-w309" /></p></li>
-
-<li><p>建立软链接： <code>ln -sf static/media</code> .</p></li>
+<li>修改成绝对路径
+<br /></li>
 </ul>
+
+<p><img src="/media/15323997600578.jpg" alt="-w154" /></p>
+
+<ul>
+<li>建立软链接： <code>ln -sf static/media</code> .</li>
+</ul></li>
+</ol>
 
     </div>
 
