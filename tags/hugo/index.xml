@@ -6,10 +6,19 @@
     <description>Recent content in Hugo on Tim&#39;s Github Page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Jul 2018 16:48:19 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jul 2018 08:45:17 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Create a Blog by Hugo (2)</title>
+      <link>http://localhost:1313/post/create-a-blog-by-hugo-2/</link>
+      <pubDate>Tue, 24 Jul 2018 08:45:17 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/create-a-blog-by-hugo-2/</guid>
+      <description>简易部署hugo文章到github page. 参考： https://gohugo.io/hosting-and-deployment/hosting-on-github/ 使用如下脚本创建deploy.sh. #!/bin/bash echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot; # Build the project. hugo -t even # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;` # Go To Public folder cd</description>
+    </item>
     
     <item>
       <title>Create a Blog by Hugo (1)</title>
@@ -17,7 +26,7 @@
       <pubDate>Mon, 23 Jul 2018 16:48:19 +0800</pubDate>
       
       <guid>http://localhost:1313/post/create-a-blog-by-hugo/</guid>
-      <description>简单记录下如何使用Hugo如何建立Github Page。 参考：https://github.com/olOwOlo/hugo-theme-e</description>
+      <description>简单记录下如何使用Hugo如何建立Github Page。 参考： * https://github.com/olOwOlo/hugo-theme-even * https://gohugo.io/hosting-and-deployment/hosting-on-github/ 下一篇再补充git hook和与mweb集成，加快发布。 $ brew install hugo $ hugo new site</description>
     </item>
     
   </channel>
