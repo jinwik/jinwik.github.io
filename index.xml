@@ -6,10 +6,19 @@
     <description>Recent content on Tim&#39;s Github Page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Jul 2018 08:45:17 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Aug 2018 22:31:15 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>动态分析技术 - 如何生成火焰图（一）</title>
+      <link>http://localhost:1313/post/systemtap-1/</link>
+      <pubDate>Thu, 09 Aug 2018 22:31:15 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/systemtap-1/</guid>
+      <description>##一、安装依赖 下面rpm，可以通过 google kernel-devel debuginfo.centos.org uname -r 找到 补充：另外在链接[1]中提到的debuginfo.centos.org网站上有kernel</description>
+    </item>
     
     <item>
       <title>Create a Blog by Hugo (2)</title>

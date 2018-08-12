@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://localhost:1313/post/systemtap-1/</loc>
+    <lastmod>2018-08-09T22:31:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/create-a-blog-by-hugo-2/</loc>
     <lastmod>2018-07-24T08:45:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -23,6 +30,13 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/flamegraph/</loc>
+    <lastmod>2018-08-09T22:31:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/tags/github-page/</loc>
     <lastmod>2018-07-24T08:45:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,21 +52,28 @@
   
   <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2018-07-24T08:45:17+08:00</lastmod>
+    <lastmod>2018-08-09T22:31:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/systemtap/</loc>
+    <lastmod>2018-08-09T22:31:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2018-07-24T08:45:17+08:00</lastmod>
+    <lastmod>2018-08-09T22:31:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2018-07-24T08:45:17+08:00</lastmod>
+    <lastmod>2018-08-09T22:31:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

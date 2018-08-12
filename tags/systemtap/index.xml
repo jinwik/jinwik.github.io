@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Systemtap on Tim&#39;s Github Page</title>
+    <link>http://localhost:1313/tags/systemtap/</link>
+    <description>Recent content in Systemtap on Tim&#39;s Github Page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 09 Aug 2018 22:31:15 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/systemtap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>动态分析技术 - 如何生成火焰图（一）</title>
+      <link>http://localhost:1313/post/systemtap-1/</link>
+      <pubDate>Thu, 09 Aug 2018 22:31:15 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/systemtap-1/</guid>
+      <description>##一、安装依赖 下面rpm，可以通过 google kernel-devel debuginfo.centos.org uname -r 找到 补充：另外在链接[1]中提到的debuginfo.centos.org网站上有kernel</description>
+    </item>
+    
+  </channel>
+</rss>
