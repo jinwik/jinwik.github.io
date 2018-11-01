@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Flamegraph on Tim&#39;s Github Page</title>
+    <title>flamegraph on Tim&#39;s Github Page</title>
     <link>http://localhost:1313/tags/flamegraph/</link>
-    <description>Recent content in Flamegraph on Tim&#39;s Github Page</description>
+    <description>Recent content in flamegraph on Tim&#39;s Github Page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 09 Aug 2018 22:31:15 +0800</lastBuildDate>
