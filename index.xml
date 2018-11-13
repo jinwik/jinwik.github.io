@@ -6,10 +6,19 @@
     <description>Recent content on Tim&#39;s Github Page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 Aug 2018 22:31:15 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Nov 2018 09:24:23 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Install Vmtools</title>
+      <link>http://localhost:1313/post/install-vmtools/</link>
+      <pubDate>Tue, 13 Nov 2018 09:24:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/install-vmtools/</guid>
+      <description>$ eject cdrom # 菜单 Virtual Machine -&amp;gt; Reinstall Vmware Tools $ sudo ssh roo@192.168.32.139 $ mkdir /mnt/cdrom $ mount /dev/cdrom /mnt/cdrom $ cd /mnt/cdrom $ tar VMwareTools-10.3.2-9925305.tar.gz -C /vmtools $ cd /vmtools/vmware-tools-distrib $ vi /etc/selinux/config #改为SELINUX=disabled $ reboot $ yum install &amp;quot;kernel-devel-uname-r == $(uname -r)&amp;quot; #非常重要</description>
+    </item>
     
     <item>
       <title>动态分析技术 - 如何生成火焰图（一）</title>
