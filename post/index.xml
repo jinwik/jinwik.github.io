@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Tim&#39;s Github Page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Nov 2018 09:24:23 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Nov 2018 09:28:45 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Prepared_statement_leak_with_vertx_async_mysql_client</title>
+      <link>http://localhost:1313/post/prepared_statement_leak_with_vertx_async_mysql_client/</link>
+      <pubDate>Tue, 13 Nov 2018 09:28:45 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/prepared_statement_leak_with_vertx_async_mysql_client/</guid>
+      <description>Mysql Can&amp;rsquo;t create more than max_prepared_stmt_count statements Firstly, what&amp;rsquo;s a prepared statement? PHP Prepared Statements Reproduce the problem Environment mysql in docker: $ docker run --name tim-mysql -e MYSQL_ROOT_PASSWORD=root \ -v /Users/tim/playground/tim-mysql/data:/var/lib/mysql \ -v /Users/tim/playground/tim-mysql/conf:/etc/mysql/conf.d \ -p 3306:3306 -d mysql:5.7 my.cnf [mysqld] log_error = /var/log/mysql/mysql_error.log general_log_file = /var/log/mysql/mysql.log general_log = 1 slow_query_log = 1 slow_query_log_file = /var/log/mysql/mysql_slow.log long_query_time = 2 log_queries_not_using_indexes = 1 monitor mysql status $ mycli -uroot $</description>
+    </item>
     
     <item>
       <title>Install Vmtools</title>
