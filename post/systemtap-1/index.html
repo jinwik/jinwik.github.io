@@ -16,21 +16,17 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Tim" />
-  <meta name="description" content="##一、安装依赖 下面rpm，可以通过 google kernel-devel debuginfo.centos.org uname -r 找到 补充：另外在链接[1]中提到的debuginfo.centos.org网站上有kernel" />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Tim" /><meta name="description" content="##一、安装依赖 下面rpm，可以通过 google kernel-devel debuginfo.centos.org uname -r 找到 补充：另外在链接[1]中提到的debuginfo.centos.org网站上有kernel" /><meta name="keywords" content="Java, Openresty, Python" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.51 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/systemtap-1/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,15 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
-
-
-
-
-
-<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
-<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="动态分析技术 - 如何生成火焰图（一）" />
@@ -61,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2018-08-09T22:31:15&#43;08:00" />
 <meta itemprop="dateModified" content="2018-08-09T22:31:15&#43;08:00" />
-<meta itemprop="wordCount" content="850">
+<meta itemprop="wordCount" content="876">
 
 
 
@@ -137,76 +126,108 @@
         <span class="post-time"> 2018-08-09 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
       <p>##一、安装依赖</p>
 
 <p>下面rpm，可以通过 google kernel-devel debuginfo.centos.org <code>uname -r</code> 找到</p>
 
 <p>补充：另外在链接[1]中提到的debuginfo.centos.org网站上有kernel-debuginfo、kernel-debuginfo-common，没有kernel-devel（至少我没有找到。。。）</p>
-
-<pre><code>$ rpm -ivh kernel-debuginfo-$(uname -r).rpm
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ rpm -ivh kernel-debuginfo-$(uname -r).rpm
 $ rpm -ivh kernel-debuginfo-common-$(uname -r).rpm
-$ rpm -ivh kernel-devel-$(uname -r).rpm
-</code></pre>
-
+$ rpm -ivh kernel-devel-$(uname -r).rpm</pre></td></tr></table>
+</div>
+</div>
 <p>##二、安装systemtap</p>
 
 <p>推荐编译安装最新的systemtap
 务必先阅读：链接[2]</p>
 
 <p>补充：链接[2]提到：systemtap会查找如下目录获取debuginfo</p>
-
-<pre><code>- By default, systemtap looks for the debug info in these locations:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">- By default, systemtap looks for the debug info in these locations:
   /boot/vmlinux-`uname -r`
   /usr/lib/debug/lib/modules/`uname -r`/vmlinux
   /lib/modules/`uname -r`/vmlinux
-  /lib/modules/`uname -r`/build/vmlinux
-</code></pre>
-
+  /lib/modules/`uname -r`/build/vmlinux</pre></td></tr></table>
+</div>
+</div>
 <p>在某些环境中（如docker）在安装完上述rpm包，/lib/modules/<code>uname -r</code>不存在，可以尝试下面办法：</p>
-
-<pre><code>$ cd /usr/src/kernels
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ cd /usr/src/kernels
 $ cd $(ls -d */ | head -n 1)
-$ ln -s -f $(pwd) /lib/modules/$(uname -r)/build #如果没法创建链接，先创建/lib/modules/$(uname -r)再执行。
-</code></pre>
-
+$ ln -s -f $(pwd) /lib/modules/$(uname -r)/build #如果没法创建链接，先创建/lib/modules/$(uname -r)再执行。</pre></td></tr></table>
+</div>
+</div>
 <p>补充： 没有/lib/modules的原因是docker启动时没有mount宿主机该目录，/lib/modules/<code>uname -r</code>是centos创建时就已经生成了，其中的build目录是指向/usr/src/kernels/<code>uname -r</code>的软连接。上述脚本就是完成该工作。
 实际上在宿主机的/lib/modules/<code>uname -r</code>除了build的目录还有其他文件，幸好systemtap不使用，不然的话只能在docker启动参数中加入相关的mount指令。</p>
 
 <p>简化的编译安装步骤如下</p>
-
-<pre><code>$ git clone git://sourceware.org/git/systemtap.git
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ git clone git://sourceware.org/git/systemtap.git
 $ sudo yum-builddep systemtap
 $ ./configure --prefix=/usr/local/systemtap
 $ make &amp;&amp; make install
-$ export PATH=/usr/local/systemtap/bin:$PATH
-</code></pre>
-
+$ export PATH=/usr/local/systemtap/bin:$PATH</pre></td></tr></table>
+</div>
+</div>
 <p>测试systemtap是否可用，检测脚本在链接[2]中都有提到。</p>
 
 <p><code>$ sudo stap -v -e 'probe vfs.read {printf(&quot;read performed\n&quot;); exit()}'</code></p>
 
 <p>##三、systemtap脚本（openresty）和火焰图工具</p>
-
-<pre><code>$ mkdir /github &amp;&amp; cd /github
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ mkdir /github &amp;&amp; cd /github
 # 下载stapxx
 $ git clone https://github.com/openresty/stapxx.git
 # 下载FlameGraph 
@@ -215,10 +236,9 @@ $ git clone https://github.com/brendangregg/FlameGraph.git
 $ export PATH=/github/stapxx:/github/stapxx/samples:/github/FlameGraph:$PATH
 
 # 因为systemtap需要使用root权限，一般其他非root的path不在包含在root的path中，因此在sudo时
-可以使用sudo env PATH=$PATH ...command，把非root的用户的PATH加入进来。
-
-</code></pre>
-
+可以使用sudo env PATH=$PATH ...command，把非root的用户的PATH加入进来。</pre></td></tr></table>
+</div>
+</div>
 <p>##四、参考链接</p>
 
 <ul>
@@ -229,7 +249,6 @@ $ export PATH=/github/stapxx:/github/stapxx/samples:/github/FlameGraph:$PATH
 
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -241,30 +260,18 @@ $ export PATH=/github/stapxx:/github/stapxx/samples:/github/FlameGraph:$PATH
   </p>
   
   
-</div>
-
-    
-    
-
-    <footer class="post-footer">
+</div><footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/tags/systemtap/">systemtap</a>
-          
           <a href="/tags/flamegraph/">flamegraph</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/post/install-vmtools/">
+        <a class="prev" href="/post/install-vmtools/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Install Vmtools</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/post/create-a-blog-by-hugo-2/">
+        <a class="next" href="/post/create-a-blog-by-hugo-2/">
             <span class="next-text nav-default">Create a Blog by Hugo (2)</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -273,8 +280,7 @@ $ export PATH=/github/stapxx:/github/stapxx/samples:/github/FlameGraph:$PATH
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -288,8 +294,6 @@ $ export PATH=/github/stapxx:/github/stapxx/samples:/github/FlameGraph:$PATH
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-  
 
       </div>
     </main>
@@ -309,6 +313,8 @@ $ export PATH=/github/stapxx:/github/stapxx/samples:/github/FlameGraph:$PATH
       <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
       <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
       <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
   <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
@@ -326,8 +332,7 @@ $ export PATH=/github/stapxx:/github/stapxx/samples:/github/FlameGraph:$PATH
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
+    2017 - 
     2018
     <span class="heart">
       <i class="iconfont icon-heart"></i>
@@ -342,12 +347,10 @@ $ export PATH=/github/stapxx:/github/stapxx/samples:/github/FlameGraph:$PATH
     </div>
   </div>
   
-<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
-
-
-<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
 
 
 

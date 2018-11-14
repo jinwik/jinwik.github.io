@@ -16,21 +16,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Tim" />
-  <meta name="description" content="简易部署hugo文章到github page. 参考： https://gohugo.io/hosting-and-deployment/hosting-on-github/ 使用如下脚本创建deploy.sh. #!/bin/bash echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot; # Build the project. hugo -t even # if using a theme, replace with `hugo -t &amp;lt;YOURTHEME&amp;gt;` # Go To Public folder cd" />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Tim" /><meta name="description" content=" 简易部署hugo文章到github page.
+" /><meta name="keywords" content="Java, Openresty, Python" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.51 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/create-a-blog-by-hugo-2/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,37 +35,36 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
-
-
-
-
-
-<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
-<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="Create a Blog by Hugo (2)" />
-<meta property="og:description" content="简易部署hugo文章到github page. 参考： https://gohugo.io/hosting-and-deployment/hosting-on-github/ 使用如下脚本创建deploy.sh. #!/bin/bash echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot; # Build the project. hugo -t even # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;` # Go To Public folder cd" />
+<meta property="og:description" content="
+简易部署hugo文章到github page.
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/create-a-blog-by-hugo-2/" /><meta property="article:published_time" content="2018-07-24T08:45:17&#43;08:00"/>
 <meta property="article:modified_time" content="2018-07-24T08:45:17&#43;08:00"/>
 
 <meta itemprop="name" content="Create a Blog by Hugo (2)">
-<meta itemprop="description" content="简易部署hugo文章到github page. 参考： https://gohugo.io/hosting-and-deployment/hosting-on-github/ 使用如下脚本创建deploy.sh. #!/bin/bash echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot; # Build the project. hugo -t even # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;` # Go To Public folder cd">
+<meta itemprop="description" content="
+简易部署hugo文章到github page.
+">
 
 
 <meta itemprop="datePublished" content="2018-07-24T08:45:17&#43;08:00" />
 <meta itemprop="dateModified" content="2018-07-24T08:45:17&#43;08:00" />
-<meta itemprop="wordCount" content="144">
+<meta itemprop="wordCount" content="192">
 
 
 
 <meta itemprop="keywords" content="Hugo,Github Page," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Create a Blog by Hugo (2)"/>
-<meta name="twitter:description" content="简易部署hugo文章到github page. 参考： https://gohugo.io/hosting-and-deployment/hosting-on-github/ 使用如下脚本创建deploy.sh. #!/bin/bash echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot; # Build the project. hugo -t even # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;` # Go To Public folder cd"/>
+<meta name="twitter:description" content="
+简易部署hugo文章到github page.
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -137,56 +133,84 @@
         <span class="post-time"> 2018-07-24 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      <ol>
-<li><p>简易部署hugo文章到github page.</p>
+      <blockquote>
+<p>简易部署hugo文章到github page.</p>
+</blockquote>
 
-<p>参考： <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a> 使用如下脚本创建deploy.sh.</p>
+<p>简易部署hugo文章到github page.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">参考： https://gohugo.io/hosting-and-deployment/hosting-on-github/ 使用如下脚本创建deploy.sh.
 
-<pre><code>#!/bin/bash
-        
-echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
-        
-# Build the project.
-hugo -t even # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
-        
-# Go To Public folder
-cd public
-# Add changes to git.
+<span class="sb">```</span>
+<span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="nb">echo</span> -e <span class="s2">&#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34;</span>
+
+<span class="c1"># Build the project.</span>
+hugo -t even <span class="c1"># if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`</span>
+
+<span class="c1"># Go To Public folder</span>
+<span class="nb">cd</span> public
+<span class="c1"># Add changes to git.</span>
 git add .
-        
-# Commit changes.
-msg=&quot;rebuilding site `date`&quot;
-if [ $# -eq 1 ]
-  then msg=&quot;$1&quot;
-fi
-git commit -m &quot;$msg&quot;
-        
-# Push source and build repos.
-git push origin master
-        
-# Come Back up to the Project Root
-cd ..
-</code></pre></li>
 
+<span class="c1"># Commit changes.</span>
+<span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;rebuilding site `date`&#34;</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">1</span> <span class="o">]</span>
+  <span class="k">then</span> <span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+<span class="k">fi</span>
+git commit -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
+
+<span class="c1"># Push source and build repos.</span>
+git push origin master
+
+<span class="c1"># Come Back up to the Project Root</span>
+<span class="nb">cd</span> ..
+<span class="sb">```</span></pre></td></tr></table>
+</div>
+</div>
+<ol>
 <li><p>配合mweb使用.</p>
 
 <ul>
@@ -200,10 +224,8 @@ cd ..
 <li>建立软链接： <code>ln -sf static/media .</code></li>
 </ul></li>
 </ol>
-
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -215,30 +237,18 @@ cd ..
   </p>
   
   
-</div>
-
-    
-    
-
-    <footer class="post-footer">
+</div><footer class="post-footer">
       <div class="post-tags">
-          
           <a href="/tags/hugo/">Hugo</a>
-          
           <a href="/tags/github-page/">Github Page</a>
-          
-        </div>
-
-      
+          </div>
       <nav class="post-nav">
-        
-          <a class="prev" href="/post/systemtap-1/">
+        <a class="prev" href="/post/systemtap-1/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">动态分析技术 - 如何生成火焰图（一）</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/post/create-a-blog-by-hugo/">
+        <a class="next" href="/post/create-a-blog-by-hugo/">
             <span class="next-text nav-default">Create a Blog by Hugo (1)</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -247,8 +257,7 @@ cd ..
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -262,8 +271,6 @@ cd ..
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-  
 
       </div>
     </main>
@@ -283,6 +290,8 @@ cd ..
       <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
       <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
       <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
   <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
@@ -300,8 +309,7 @@ cd ..
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
+    2017 - 
     2018
     <span class="heart">
       <i class="iconfont icon-heart"></i>
@@ -316,12 +324,10 @@ cd ..
     </div>
   </div>
   
-<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
-
-
-<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
 
 
 

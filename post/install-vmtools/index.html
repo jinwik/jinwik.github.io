@@ -16,21 +16,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Tim" />
-  <meta name="description" content="$ eject cdrom # 菜单 Virtual Machine -&amp;gt; Reinstall Vmware Tools $ sudo ssh roo@192.168.32.139 $ mkdir /mnt/cdrom $ mount /dev/cdrom /mnt/cdrom $ cd /mnt/cdrom $ tar VMwareTools-10.3.2-9925305.tar.gz -C /vmtools $ cd /vmtools/vmware-tools-distrib $ vi /etc/selinux/config #改为SELINUX=disabled $ reboot $ yum install &amp;quot;kernel-devel-uname-r == $(uname -r)&amp;quot; #非常重要" />
-
-  <meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Tim" /><meta name="description" content=" 记录在VMware Fusion如何安装vmtools
+" /><meta name="keywords" content="Java, Openresty, Python" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.51 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://localhost:1313/post/install-vmtools/" />
-
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,37 +35,36 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
-
-
-
-
-
-<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
-<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
-
-
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="Install Vmtools" />
-<meta property="og:description" content="$ eject cdrom # 菜单 Virtual Machine -&gt; Reinstall Vmware Tools $ sudo ssh roo@192.168.32.139 $ mkdir /mnt/cdrom $ mount /dev/cdrom /mnt/cdrom $ cd /mnt/cdrom $ tar VMwareTools-10.3.2-9925305.tar.gz -C /vmtools $ cd /vmtools/vmware-tools-distrib $ vi /etc/selinux/config #改为SELINUX=disabled $ reboot $ yum install &quot;kernel-devel-uname-r == $(uname -r)&quot; #非常重要" />
+<meta property="og:description" content="
+记录在VMware Fusion如何安装vmtools
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/install-vmtools/" /><meta property="article:published_time" content="2018-11-13T09:24:23&#43;08:00"/>
 <meta property="article:modified_time" content="2018-11-13T09:24:23&#43;08:00"/>
 
 <meta itemprop="name" content="Install Vmtools">
-<meta itemprop="description" content="$ eject cdrom # 菜单 Virtual Machine -&gt; Reinstall Vmware Tools $ sudo ssh roo@192.168.32.139 $ mkdir /mnt/cdrom $ mount /dev/cdrom /mnt/cdrom $ cd /mnt/cdrom $ tar VMwareTools-10.3.2-9925305.tar.gz -C /vmtools $ cd /vmtools/vmware-tools-distrib $ vi /etc/selinux/config #改为SELINUX=disabled $ reboot $ yum install &quot;kernel-devel-uname-r == $(uname -r)&quot; #非常重要">
+<meta itemprop="description" content="
+记录在VMware Fusion如何安装vmtools
+">
 
 
 <meta itemprop="datePublished" content="2018-11-13T09:24:23&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-13T09:24:23&#43;08:00" />
-<meta itemprop="wordCount" content="88">
+<meta itemprop="wordCount" content="131">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Install Vmtools"/>
-<meta name="twitter:description" content="$ eject cdrom # 菜单 Virtual Machine -&gt; Reinstall Vmware Tools $ sudo ssh roo@192.168.32.139 $ mkdir /mnt/cdrom $ mount /dev/cdrom /mnt/cdrom $ cd /mnt/cdrom $ tar VMwareTools-10.3.2-9925305.tar.gz -C /vmtools $ cd /vmtools/vmware-tools-distrib $ vi /etc/selinux/config #改为SELINUX=disabled $ reboot $ yum install &quot;kernel-devel-uname-r == $(uname -r)&quot; #非常重要"/>
+<meta name="twitter:description" content="
+记录在VMware Fusion如何安装vmtools
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -137,47 +133,62 @@
         <span class="post-time"> 2018-11-13 </span>
         
         
-        
       </div>
     </header>
 
-    
-    
-<div class="post-toc" id="post-toc">
+    <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
-  
   <div class="post-toc-content always-active">
     
   </div>
 </div>
-
-    
-    
-
-    
     <div class="post-content">
-      <pre><code class="language-bash">    $ eject cdrom
+      <blockquote>
+<p>记录在VMware Fusion如何安装vmtools</p>
+</blockquote>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">    $ eject cdrom
     
-    # 菜单 Virtual Machine -&gt; Reinstall Vmware Tools
+    <span class="c1"># 菜单 Virtual Machine -&gt; Reinstall Vmware Tools</span>
     
     $ sudo ssh roo@192.168.32.139
     $ mkdir /mnt/cdrom
     $ mount /dev/cdrom /mnt/cdrom
-    $ cd /mnt/cdrom
+    $ <span class="nb">cd</span> /mnt/cdrom
     $ tar VMwareTools-10.3.2-9925305.tar.gz -C /vmtools
-    $ cd /vmtools/vmware-tools-distrib
-    $ vi /etc/selinux/config #改为SELINUX=disabled
+    $ <span class="nb">cd</span> /vmtools/vmware-tools-distrib
+    $ vi /etc/selinux/config <span class="c1">#改为SELINUX=disabled</span>
     $ reboot
-    $ yum install &quot;kernel-devel-uname-r == $(uname -r)&quot; #非常重要
+    $ yum install <span class="s2">&#34;kernel-devel-uname-r == </span><span class="k">$(</span>uname -r<span class="k">)</span><span class="s2">&#34;</span> <span class="c1">#非常重要</span>
     $ ./vmware-install.pl -d
     
-    # 菜单可以选择同步的目录
-    $ ls /mnt/hgfs
-</code></pre>
-
+    <span class="c1"># 菜单可以选择同步的目录</span>
+    $ ls /mnt/hgfs</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
-    
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">Author</span>
@@ -189,24 +200,15 @@
   </p>
   
   
-</div>
-
-    
-    
-
-    <footer class="post-footer">
-      
-
+</div><footer class="post-footer">
       
       <nav class="post-nav">
-        
-          <a class="prev" href="/post/prepared_statement_leak_with_vertx_async_mysql_client/">
+        <a class="prev" href="/post/prepared_statement_leak_with_vertx_async_mysql_client/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Prepared_statement_leak_with_vertx_async_mysql_client</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
-          <a class="next" href="/post/systemtap-1/">
+        <a class="next" href="/post/systemtap-1/">
             <span class="next-text nav-default">动态分析技术 - 如何生成火焰图（一）</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
@@ -215,8 +217,7 @@
     </footer>
   </article>
         </div>
-        
-  <div id="disqus_thread"></div>
+        <div id="disqus_thread"></div>
     <script type="text/javascript">
     (function() {
       
@@ -230,8 +231,6 @@
     })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-  
 
       </div>
     </main>
@@ -251,6 +250,8 @@
       <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
       <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
       <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
   <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
@@ -268,8 +269,7 @@
 
   <span class="copyright-year">
     &copy; 
-    
-      2017 - 
+    2017 - 
     2018
     <span class="heart">
       <i class="iconfont icon-heart"></i>
@@ -284,12 +284,10 @@
     </div>
   </div>
   
-<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
-
-
-<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
 
 
 

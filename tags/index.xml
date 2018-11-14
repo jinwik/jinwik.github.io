@@ -39,11 +39,38 @@
     </item>
     
     <item>
+      <title>preview</title>
+      <link>http://localhost:1313/tags/preview/</link>
+      <pubDate>Wed, 30 Aug 2017 01:37:56 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/preview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>systemtap</title>
       <link>http://localhost:1313/tags/systemtap/</link>
       <pubDate>Thu, 09 Aug 2018 22:31:15 +0800</pubDate>
       
       <guid>http://localhost:1313/tags/systemtap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag-1</title>
+      <link>http://localhost:1313/tags/tag-1/</link>
+      <pubDate>Wed, 30 Aug 2017 01:37:56 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/tag-1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>中文</title>
+      <link>http://localhost:1313/tags/%E4%B8%AD%E6%96%87/</link>
+      <pubDate>Wed, 30 Aug 2017 01:37:56 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/%E4%B8%AD%E6%96%87/</guid>
       <description></description>
     </item>
     
