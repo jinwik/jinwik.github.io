@@ -32,20 +32,21 @@
 
         .time {
           padding-top: 120px;
-          display: flex;
           font-size: 16rem;
           margin-left: 5%;
           margin-right: 5%;
         }
+
+        .time span {
+          display: inline-block;
+        }
+
         .time .hour {
-          width: 24%;
-          margin-left: 2%;
-          margin-right: 2%;
+          width: 25%;
+
         }
         .time .minutes {
           width: 24%;
-          margin-left: 2%;
-          margin-right: 2%;
         }
 
         .split {
@@ -75,11 +76,11 @@
 
       <div class="time_wrapper">
           <div class="time" id="time">
-            <div class="hour" id="hour1"></div>
-            <div class="hour" id="hour2"></div>
-            <div class="split"> : </div>
-            <div class="minutes" id="minute1"></div>
-            <div class="minutes" id="minute2"></div>
+            <sapn class="hour" id="hour1"></sapn>
+            <sapn class="hour" id="hour2"></sapn>
+            <sapn class="split"> : </sapn>
+            <sapn class="minutes" id="minute1"></sapn>
+            <sapn class="minutes" id="minute2"></sapn>
           </div>
       </div>
 
