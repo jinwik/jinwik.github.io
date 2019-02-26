@@ -32,12 +32,40 @@
 
         .time {
           padding-top: 120px;
+          display: flex;
+          justify-content: space-between;
           font-size: 16rem;
+          margin-left: 5%;
+          margin-right: 5%;
+        }
+        .time .hour {
+          width: 24%;
+          margin-left: 20px;
+          padding-left: 20px: 
+        }
+        .time .minutes {
+          width: 24%;
+          margin-left: 20px;
+          padding-left: 20px: 
+        }
+
+        .split {
+          width: 6%;
         }
 
         .date {
           padding-top: 40px;
           font-size: 6rem;
+        }
+        
+        .hour  {
+          background-color: #000000;
+          color: #FFFFFF;
+        }
+
+        .minutes {
+          background-color: #000000;
+          color: #FFFFFF;
         }
 
     </style>
@@ -47,7 +75,13 @@
     <div class="page">
 
       <div class="time_wrapper">
-          <div class="time" id="time">00:00</div>
+          <div class="time" id="time">
+            <div class="hour" id="hour1"></div>
+            <div class="hour" id="hour2"></div>
+            <div class="split"> : </div>
+            <div class="minutes" id="minute1"></div>
+            <div class="minutes" id="minute2"></div>
+          </div>
       </div>
 
       <div class="date_wrapper">
@@ -58,22 +92,42 @@
 
 
     <script>
-      var names =  ['time', 'date', 'week']
-      var values = {'time': 0, 'date': 0, 'week': 0}
+      var names =  ['hour1', 'hour2', 'minute1', 'minute2', 'date', 'week']
+      var values = {'hour1': 0, 'hour2': 0, 'minute1': 0, 'minute2': 0,'date': 0, 'week': 0}
       var weeks = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
       function fresh() {
-        
+
         var date = new Date()
         var utc8DiffMinutes = date.getTimezoneOffset() + 480
         date.setMinutes(date.getMinutes() + utc8DiffMinutes)
 
-        values['time'] = ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2)
+        var hours =  parseInt(date.getHours())
+        var minutes = parseInt(date.getMinutes())
+
+        if(hours < 10) {
+          values['hour1'] = 0
+          values['hour2'] = hours
+        } else {
+          values['hour1'] = parseInt(hours / 10)
+          values['hour2'] = hours % 10
+        }
+
+        if(minutes < 10) {
+          values['minute1'] = 0
+          values['minute2'] = minutes
+        } else {
+          values['minute1'] = parseInt(minutes / 10)
+          values['minute2'] = minutes % 10
+        }
+
         values['date'] = (date.getMonth() + 1) + '/' + date.getDate()
         values['week'] = weeks[date.getDay()]
 
         names.forEach(function(name) {
             document.getElementById(name).innerHTML = values[name]
         })
+
+
       }
 
       fresh()
