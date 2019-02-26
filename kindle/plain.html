@@ -33,20 +33,19 @@
         .time {
           padding-top: 120px;
           display: flex;
-          justify-content: space-between;
           font-size: 16rem;
           margin-left: 5%;
           margin-right: 5%;
         }
         .time .hour {
           width: 24%;
-          margin-left: 20px;
-          padding-left: 20px: 
+          margin-left: 2%;
+          margin-right: 2%;
         }
         .time .minutes {
           width: 24%;
-          margin-left: 20px;
-          padding-left: 20px: 
+          margin-left: 2%;
+          margin-right: 2%;
         }
 
         .split {
@@ -104,21 +103,11 @@
         var hours =  parseInt(date.getHours())
         var minutes = parseInt(date.getMinutes())
 
-        if(hours < 10) {
-          values['hour1'] = 0
-          values['hour2'] = hours
-        } else {
-          values['hour1'] = parseInt(hours / 10)
-          values['hour2'] = hours % 10
-        }
+        values['hour1'] = parseInt(hours / 10)
+        values['hour2'] = hours % 10
 
-        if(minutes < 10) {
-          values['minute1'] = 0
-          values['minute2'] = minutes
-        } else {
-          values['minute1'] = parseInt(minutes / 10)
-          values['minute2'] = minutes % 10
-        }
+        values['minute1'] = parseInt(minutes / 10)
+        values['minute2'] = minutes % 10
 
         values['date'] = (date.getMonth() + 1) + '/' + date.getDate()
         values['week'] = weeks[date.getDay()]
