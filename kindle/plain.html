@@ -62,21 +62,18 @@
       var values = {'time': 0, 'date': 0, 'week': 0}
       var weeks = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
       function fresh() {
-
+        
         var date = new Date()
         var utc8DiffMinutes = date.getTimezoneOffset() + 480
         date.setMinutes(date.getMinutes() + utc8DiffMinutes)
-        
-        values['time'] = date.getHours() + ':' + ('0' + date.getMinutes()).slice(-2)
+
+        values['time'] = ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2)
         values['date'] = (date.getMonth() + 1) + '/' + date.getDate()
         values['week'] = weeks[date.getDay()]
 
         names.forEach(function(name) {
             document.getElementById(name).innerHTML = values[name]
         })
-        // document.getElementById("time").innerHTML = timeString
-        // document.getElementById("date").innerHTML = dateString
-        // document.getElementById("week").innerHTML = weekString
       }
 
       fresh()
